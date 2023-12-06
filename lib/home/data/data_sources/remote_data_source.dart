@@ -18,7 +18,8 @@ class HomeRemoteDatSource extends HomeRemoteDataSource {
   Future<List<BookEntity>> fetchFeaturedBooks() async {
     var data =
     await APIservice.get(endpoint:'volumes?Filtering=free-ebooks&q=computer science' );
-    List<BookEntity> books = getBooksList(data);    // extract method  --> ctlr + alt + m
+    List<BookEntity> books = getBooksList(data); // extract method  --> ctlr + alt + m
+    
     saveBooksData(books, kFeatureBox);
     return books ;
   }
